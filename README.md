@@ -95,7 +95,7 @@ python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-Replace `<YOUR_REPOSITORY_URL>` with the clone URL shown on the repository page. If Windows blocks virtual-environment activation, use `.venv\Scripts\python.exe` directly.
+If Windows blocks virtual-environment activation, use `.venv\\Scripts\\python.exe` directly.
 
 ## Run
 
