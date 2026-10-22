@@ -17,3 +17,15 @@ def test_mismatched_lengths():
     with pytest.raises(ValueError,match="equal lengths"): filter_detections(pred([[0,0,1,1]],[1,2],[.9]),.5)
 def test_missing_keys():
     with pytest.raises(ValueError,match="must contain"): filter_detections({"scores":torch.tensor([.9])},.5)
+
+from detector import load_image
+
+def test_load_image_missing_path_has_clear_error(tmp_path):
+    with pytest.raises(FileNotFoundError, match="does not exist"):
+        load_image(tmp_path / "missing.jpg")
+
+def test_load_image_rejects_invalid_file(tmp_path):
+    invalid = tmp_path / "broken.jpg"
+    invalid.write_text("not an image", encoding="utf-8")
+    with pytest.raises(ValueError, match="Could not read a valid image"):
+        load_image(invalid)
