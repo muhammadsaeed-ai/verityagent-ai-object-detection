@@ -76,7 +76,7 @@ PyTorch 2.5.1 and Torchvision 0.20.1 are a matched release pair. For CUDA-specif
 ### Windows PowerShell
 
 ```powershell
-git clone <YOUR_REPOSITORY_URL>
+git clone https://github.com/muhammadsaeed-ai/verityagent-ai-object-detection.git
 cd verityagent-ai-object-detection
 py -3.11 -m venv .venv
 .\.venv\Scripts\Activate.ps1
@@ -87,7 +87,7 @@ pip install -r requirements.txt
 ### macOS / Linux
 
 ```bash
-git clone <YOUR_REPOSITORY_URL>
+git clone https://github.com/muhammadsaeed-ai/verityagent-ai-object-detection.git
 cd verityagent-ai-object-detection
 python3.11 -m venv .venv
 source .venv/bin/activate
