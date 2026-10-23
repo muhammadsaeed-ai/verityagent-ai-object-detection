@@ -35,4 +35,9 @@ def display_image(image: Image.Image, window_name: str = "VerityAgent Object Det
         cv2.waitKey(0)
     except cv2.error as exc:
         raise RuntimeError("Image display failed. Use --no-display on headless systems or install OpenCV with GUI support.") from exc
-    finally: cv2.destroyAllWindows()
+    finally:
+        # Cleanup must not mask the original GUI error (common on headless builds).
+        try:
+            cv2.destroyAllWindows()
+        except cv2.error:
+            pass
